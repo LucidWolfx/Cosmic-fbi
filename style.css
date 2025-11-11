@@ -1,46 +1,56 @@
 
-body, html {
+* {
   margin: 0;
   padding: 0;
-  height: 100%;
-  font-family: 'Rajdhani', sans-serif;
-  color: white;
-  overflow: hidden;
+  box-sizing: border-box;
 }
 
-#bg-video {
+body, html {
+  height: 100%;
+  font-family: 'Rajdhani', sans-serif;
+  overflow-x: hidden;
+  color: #fff;
+  background: #000;
+}
+
+#background-video {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
   z-index: -1;
 }
 
 .overlay {
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.6);
+  min-height: 100vh;
 }
 
 header {
-  background: rgba(0,0,0,0.7);
-  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1.5rem 3rem;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-bottom: 2px solid #1a73e8;
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
+  color: #1a73e8;
 }
 
 nav a {
-  color: #fff;
-  margin-left: 20px;
+  margin-left: 1.5rem;
+  color: #ccc;
   text-decoration: none;
-  transition: color 0.3s;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
@@ -49,30 +59,62 @@ nav a:hover {
 
 .hero {
   text-align: center;
-  padding: 6rem 2rem 2rem;
+  padding: 6rem 2rem 3rem;
 }
 
 .hero h1 {
   font-size: 3rem;
+  background: linear-gradient(90deg, #1a73e8, #8b5cf6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
 }
 
-.grid-section {
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.grid {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  padding: 2rem;
+  padding: 3rem 2rem;
 }
 
 .card {
-  background: rgba(0,0,0,0.6);
-  padding: 1.5rem;
-  border-radius: 10px;
-  width: 280px;
+  background: rgba(20, 20, 20, 0.8);
+  padding: 2rem;
+  border-radius: 12px;
+  width: 300px;
   text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 12px rgba(0, 255, 255, 0.15);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.35);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  color: #1a73e8;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  color: #bbb;
+  font-size: 1rem;
 }
 
 footer {
   text-align: center;
-  padding: 1rem;
-  background: rgba(0,0,0,0.7);
+  padding: 2rem 1rem;
+  color: #777;
+  font-size: 0.9rem;
+  background-color: rgba(0, 0, 0, 0.6);
 }
